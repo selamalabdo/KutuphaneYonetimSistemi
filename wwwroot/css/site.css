@@ -1,0 +1,144 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+
+/* Sayfa başlığı ve genel düzen */
+h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 50px;
+}
+
+/* Kartların stilini düzenleme */
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Hover animasyonu */
+}
+
+/* Kart başlıklarının stilini düzenleme */
+.card-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Butonlar için animasyon ve renk */
+.animated-button {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.animated-button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.animated-button:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.animated-button:hover:before {
+  width: 0;
+  height: 0;
+}
+
+/* Hover efekti */
+.card-body .btn:hover {
+  background-color: #f1c40f;
+  transform: scale(1.1);  /* Buton hover efektini büyütme */
+}
+
+/* Animasyonlu butonlar */
+.btn-primary, .btn-success, .btn-danger {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-success:hover, .btn-danger:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.btn-primary:hover::before, .btn-success:hover::before, .btn-danger:hover::before {
+  width: 0;
+  height: 0;
+}
+
+
+.footer {
+  display: flex;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.container {
+  flex: 1;
+}

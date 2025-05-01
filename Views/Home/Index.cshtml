@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa - Kutuphane Yonetim Sistemi";
+}
+
+<div class="text-center my-5">
+    <h1 class="display-4 text-primary font-weight-bold">Kutuphane Yönetim Sistemine Hoşgeldiniz!</h1>
+    <p class="lead text-secondary">Kitaplarınızı kolayca yönetin, kullanıcıları takip edin ve kütüphanenizi verimli bir şekilde idare edin.</p>
+
+    <!-- Kütüphane İkonu -->
+    <img src="~/images/library-icon.png" alt="Kütüphane İkonu" class="img-fluid mb-4" style="max-width: 200px; border-radius: 50%;"    />
+
+    <!-- Kısa Açıklama -->
+    <p class="text-muted">
+        Bu sistem, kütüphane yönetimini daha verimli hale getirmek için kitapları ekleyip, düzenlemenize, silmenize ve kitap bilgilerini görüntülemenize imkan tanır. Ayrıca, kullanıcı ekleyebilir ve mevcut kullanıcıları yönetebilirsiniz.
+    </p>
+
+    <!-- Başlangıç Butonları -->
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary btn-lg mx-2" href="/Kitaplar/Goruntule" role="button">
+            <i class="fas fa-book"></i> Kitapları Görüntüle
+        </a>
+        <a class="btn btn-success btn-lg mx-2" href="/Kitaplar/Ekle" role="button">
+            <i class="fas fa-plus-circle"></i> Yeni Kitap Ekle
+        </a>
+    </div>
+
+    <div class="mt-5">
+        <h2 class="text-primary">Nasıl Yardımcı Olabiliriz?</h2>
+        <p>Detaylı bilgi almak için aşağıdaki linkleri ziyaret edebilirsiniz.</p>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-outline-primary btn-lg mx-2" href="" role="button">
+                <i class="fas fa-info-circle"></i>  Hakkında
+            </a>
+            <a class="btn btn-outline-success btn-lg mx-2" href="/Hakkinda" role="button">
+                <i class="fas fa-book-reader"></i> Kütüphane Kullanım Kılavuzu
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Gereken Kütüphaneler İçin Scriptler -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>  <!-- FontAwesome Iconları için -->

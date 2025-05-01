@@ -1,0 +1,28 @@
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
+namespace KutuphaneYonetimSistemi.Controllers
+{
+    public class SepetController : Controller
+    {
+        [HttpGet]
+        public IActionResult Ekle(int id)
+        {
+            return Content($"Kitap ID {id} sepete eklendi.");
+        }
+
+        [HttpGet]
+        public IActionResult Sepetim()
+        {
+            // Şimdilik sahte bir listeyle gösterelim
+            var ornekKitaplar = new List<string>
+            {
+                "Harry Potter ve Felsefe Taşı",
+                "Sefiller",
+                "Suç ve Ceza"
+            };
+
+            return View(ornekKitaplar);
+        }
+    }
+}

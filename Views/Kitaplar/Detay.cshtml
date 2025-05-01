@@ -1,0 +1,22 @@
+@model KutuphaneYonetimSistemi.Models.Kitap
+
+
+@if (TempData["SepetMesaji"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SepetMesaji"]
+    </div>
+}
+
+<h2 class="text-center text-primary my-4">Kitap Detayı</h2>
+
+<div class="card shadow-sm p-4">
+    <h4 class="text-success">@Model.KitapAdi</h4>
+    <p><strong>Yazar:</strong> @Model.Yazar</p>
+    <p><strong>Yayın Yılı:</strong> @Model.YayinYili</p>
+    <p><strong>Tür:</strong> @Model.Tur</p>
+    <p><strong>Fiyat:</strong> @(Model.Fiyat != null ? Model.Fiyat.Value.ToString("C") : "Bilinmiyor")</p>
+    <a href="/Sepet/Ekle/@Model.Id" class="btn btn-outline-success mt-3">Sepete Ekle 🛒</a>
+    
+</div>
+

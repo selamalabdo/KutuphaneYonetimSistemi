@@ -1,0 +1,23 @@
+
+
+@model List<string>
+
+@{
+    ViewData["Title"] = "Sepetim";
+}
+
+<h2 class="text-center my-4">🛒 Sepetim</h2>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info text-center">Sepetiniz boş.</div>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var kitap in Model)
+        {
+            <li class="list-group-item">@kitap</li>
+        }
+    </ul>
+}

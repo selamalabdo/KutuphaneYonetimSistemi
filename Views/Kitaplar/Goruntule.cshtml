@@ -1,0 +1,35 @@
+@model List<KutuphaneYonetimSistemi.Models.Kitap>
+
+@{
+    ViewData["Title"] = "Kitapları Görüntüle";
+}
+
+@if (TempData["SepetMesaji"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["SepetMesaji"]
+    </div>
+}
+
+
+<h2 class=" text-primary my-4">Tüm Kitaplar</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var kitap in Model)
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@kitap.KitapAdi</h5>
+                    <p class="card-text"><strong>Yazar:</strong> @kitap.Yazar</p>
+                    <p class="card-text">@kitap.Tur?.Substring(0, Math.Min(100, kitap.Tur.Length))...</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/Kitaplar/Detay/@kitap.Id" class="btn btn-outline-primary btn-sm">Detay</a>   
+                    <a href="/Sepet/Ekle/@kitap.Id" class="btn btn-outline-primary btn-sm">Sepate Ekle </a>
+
+                    
+                </div>
+            </div>
+        </div>
+    }
+</div>

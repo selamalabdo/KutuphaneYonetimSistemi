@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KutuphaneYonetimSistemi</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KutuphaneYonetimSistemi.styles.css" asp-append-version="true" />
+    
+    <!-- Özel Stil -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            border-bottom: 3px solid #f8f9fa;
+        }
+
+        .navbar-brand {
+            color: #f8f9fa !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: #f8f9fa !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #f8f9fa;
+        }
+
+
+
+        .btn-outline-primary, .btn-outline-secondary, .btn-outline-danger {
+            font-size: 0.9rem;
+            border-radius: 20px;
+        }
+
+        .btn-outline-primary:hover, .btn-outline-secondary:hover, .btn-outline-danger:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Başlık Bölümü -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KutuphaneYonetimSistemi</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Kitaplar" asp-action="Goruntule">Kitaplar</a>
+                        </li>
+
+                        </li>
+                            <a class="nav-link text-dark" href="/Sepet/Sepetim">Sepetim</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Gizillilik</a>
+                        </li>
+                    </ul>
+
+
+                    <div class="d-flex align-items-center">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <span class="me-2 text-white">Hoşgeldin <strong>@User.Identity.Name</strong></span>
+                            <a class="btn btn-outline-secondary btn-sm me-1" href="/Admin/Panel">Admin Paneli</a>
+                            <a class="btn btn-outline-danger btn-sm" href="/Giris/CikisYap">Çıkış</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-primary btn-sm" href="/Giris/GirisYap">Admin Girişi</a>
+                        }
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </nav>
+    </header>
+
+    <!-- Ana İçerik Bölümü -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+ 
+<!-- Alt Bilgi Bölümü -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 - Kutuphane Yönetim Sistemi. Tüm hakları saklıdır.</p>
+    </div>
+</footer>
+
+
+    <!-- JavaScript Kütüphaneleri -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

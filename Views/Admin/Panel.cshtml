@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<h2 class="text-center text-primary">Admin Paneli</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-lg">
+                <div class="card-header bg-info text-white">
+                    <h4 class="card-title">Kitapları Yönet</h4>
+                </div>
+                <div class="card-body">
+                    <p>Kitaplarınızı listeleyebilir ve yönetebilirsiniz.</p>
+                    <a href="/Kitaplar" class="btn btn-primary btn-lg btn-block animated-button">Kitapları Listele</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-lg">
+                <div class="card-header bg-success text-white">
+                    <h4 class="card-title">Yeni Kitap Ekle</h4>
+                </div>
+                <div class="card-body">
+                    <p>Yeni kitap eklemek için bu seçeneği kullanın.</p>
+                    <a href="/Kitaplar/Ekle" class="btn btn-success btn-lg btn-block animated-button">Yeni Kitap Ekle</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-lg">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="card-title">Çıkış Yap</h4>
+                </div>
+                <div class="card-body">
+                    <p>Admin panelinden çıkmak için burayı tıklayın.</p>
+                    <a href="/Giris/CikisYap" class="btn btn-danger btn-lg btn-block animated-button">Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
